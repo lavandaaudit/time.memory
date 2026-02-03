@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISUAL PLANET MEMORY | IBONARIUM LAB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="starsCanvas"></canvas>
+    <div class="glow-orb"></div>
+
+    <div class="app-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <!-- Logo removed as per request -->
+        </aside>
+
+        <!-- Main Terminal -->
+        <main class="main-terminal">
+            <header class="main-header">
+                <div class="title-group">
+                    <p class="project-title">PROJECT: VISUAL PLANET MEMORY v1.5</p>
+                    <h1>ВІЗУАЛЬНА ПАМʼЯТЬ <br> ПЛАНЕТИ</h1>
+                </div>
+
+                <div class="header-metrics">
+                    <div class="mini-stat"><span>O2:</span> <span class="v">20.9%</span></div>
+                    <div class="mini-stat"><span>CO2:</span> <span class="v">422PPM</span></div>
+                    <div class="mini-stat"><span>TEMP:</span> <span class="v">+1.2°C</span></div>
+                </div>
+
+            </header>
+
+            <!-- Time Control Section -->
+            <section class="time-control">
+                <div class="date-selector">
+                    <div class="input-block">
+                        <label>Оберіть часовий вектор</label>
+                        <div class="select-container">
+                            <select id="daySelect"></select>
+                            <select id="monthSelect"></select>
+                            <select id="yearSelect"></select>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="fetch-btn" id="exploreBtn">ЗАПУСТИТИ</button>
+                        <button class="fetch-btn secondary" id="randomBtn">ВИПАДКОВИЙ ДЕНЬ</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media Content Grid -->
+            <section id="resultContainer" class="hidden">
+                <div class="content-grid">
+                    <!-- Hero Event / AI Summary -->
+                    <div class="memory-block full-width">
+                        <div class="block-header">
+                            <span class="block-tag">АТМОСФЕРА ДНЯ</span>
+                            <span id="displayDate">--.--.----</span>
+                        </div>
+                        <div id="aiAtmosphere" class="ai-summary">
+                            Координати часу зчитуються...
+                        </div>
+                    </div>
+
+                    <!-- Visual Data 1: Video -->
+                    <div class="memory-block">
+                        <div class="block-header">
+                            <span class="block-tag">VIDEO | ХРОНІКА</span>
+                        </div>
+                        <div class="media-container" id="videoMedia"></div>
+                        <p id="videoDesc" class="media-desc"></p>
+                    </div>
+
+                    <!-- Visual Data 2: Archive Media -->
+                    <div class="memory-block">
+                        <div class="block-header">
+                            <span class="block-tag">ARCHIVE | МЕДІА</span>
+                        </div>
+                        <div class="media-container" id="archiveMedia"></div>
+                        <p id="archiveDesc" class="media-desc"></p>
+                    </div>
+
+                    <!-- Visual Data 3: Interactive Space -->
+                    <div class="memory-block">
+                        <div class="block-header">
+                            <span class="block-tag">SPACE | ІНТЕРАКТИВ</span>
+                        </div>
+                        <div class="media-container" id="spaceClusterContainer">
+                            <canvas id="spaceInteractiveCanvas"></canvas>
+                        </div>
+                        <p id="spaceDesc" class="media-desc"></p>
+                    </div>
+
+                    <!-- Data Block 4: News -->
+                    <div class="memory-block">
+                        <div class="block-header">
+                            <span class="block-tag">NEWS | СВІТОВІ НОВИНИ</span>
+                        </div>
+                        <div id="newsArchive" class="news-list">
+                            <!-- News snippets will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="loader" class="hidden" style="text-align: center; padding: 2rem;">
+                <div class="status-dot"></div>
+                <p style="font-family: 'Syncopate'; font-size: 0.5rem; color: var(--acc-cyan);">ЗЧИТУВАННЯ ЧАСУ...</p>
+            </div>
+        </main>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
